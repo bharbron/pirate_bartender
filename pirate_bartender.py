@@ -31,16 +31,16 @@ def construct_a_drink(preferences):
   """Constructs a drink based on the given preferences"""
   drink = []
   for style in preferences:
-    if preferences[style] is True:
+    if preferences[style]:
       drink.append(random.choice(ingredients[style]))
   return drink
 
 def print_drink(drink):
   """Print the given drink, pirate style"""
-  if drink == []:
-    print "Yar! Don't ye like pirate drinks, landlubber?"
-  else:
+  if drink:
     print "I'll make ye a drink with a " + ", ".join(drink) + ", ye scurvy dog!"
+  else:
+    print "Yar! Don't ye like pirate drinks, landlubber?"
     
 
 if __name__ == '__main__':
